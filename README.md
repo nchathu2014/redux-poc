@@ -1,2 +1,2 @@
 # React+Redux POC
-POC for understanding redux
+POC for understanding reactjs with redux
