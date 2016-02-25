@@ -6,7 +6,24 @@ import {Provider} from 'react-redux';
 
 let initialState={
 
-	gitObj:[]
+	userList:[
+		{
+			id:0,
+			avatar:'https://avatars.githubusercontent.com/u/9334623?v=3',
+			userName:'nchathu2014'
+		},
+		{
+			id:1,
+			avatar:'https://avatars.githubusercontent.com/u/9334623?v=3',
+			userName:'DON'
+		}
+	],
+
+	serverRsltObj:{
+			id:1,
+			avatar:'https://avatars.githubusercontent.com/u/9334623?v=3',
+			userName:'Test User'
+	}
 	//https://api.github.com/users/nchathu2014/repos
 };
 

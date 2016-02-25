@@ -3,6 +3,8 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import actions from './redux/actions';
 import ServerCallComponent from './ServerCallComponent';
+import UserList from './UserList';
+import ServerResult from './ServerResult';
 
 class App extends Component{
 
@@ -13,7 +15,17 @@ class App extends Component{
 	render(){
 		return(
 			<div>
-				<ServerCallComponent serverCall={this.props.actions.serverCall}/>			
+			<div className="row">
+				<div className="col-lg-4 col-lg-offset-1">
+					<ServerCallComponent serverCall={this.props.actions.serverCall}/>
+					<ServerResult/>
+				</div>
+				<div className="col-lg-6">
+					<UserList actions={this.props.actions}  UserList={this.props.userList}/>	
+				</div>
+			</div>
+				
+						
 			</div>
 		);
 	}
