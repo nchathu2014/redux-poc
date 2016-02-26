@@ -6,6 +6,12 @@ class UserListItem extends Component{
 		this.props.actions.deleteUser(this.props.user.id)
 	}
 
+	_loadWeb(){
+		
+		window.open(this.props.user.htmlUrl)
+		 
+	}
+
 	render(){
 		return(
 		
@@ -17,12 +23,26 @@ class UserListItem extends Component{
 								 width="65" height="65"/>
 						</div>
 						<div className="col-lg-11 text-left" style={{lineHeight:4}}>
-							<span style={{paddingLeft:20}}>{this.props.user.userName}</span>
-							<button className="btn btn-danger btn-lg pull-right" 
+							<span style={{paddingLeft:20,fontSize:18}}>{this.props.user.userName}</span>
+							{/*<div><a class="btn btn-info" role="button" target='_blank'
+							 href={this.props.user.htmlUrl}>HTML URL</a></div>*/}
+						
+							
+							 <span className="pull-right">
+							 	<button className="btn btn-primary btn-lg " 
+							 onClick={this._loadWeb.bind(this)}>
+								View Git
+							</button>&nbsp;
+
+							<button className="btn btn-danger btn-lg " 
 							 onClick={this._deleteUser.bind(this)}>
 								<span className="glyphicon glyphicon-trash"></span>
 							</button>
+							 </span>
 						</div>
+
+						 
+
 					</div>
 								
 		);

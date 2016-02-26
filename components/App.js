@@ -17,8 +17,8 @@ class App extends Component{
 			<div>
 			<div className="row">
 				<div className="col-lg-4 col-lg-offset-1">
-					<ServerCallComponent serverCall={this.props.actions.serverCall}/>
-					<ServerResult/>
+					<ServerCallComponent actions={this.props.actions} />
+					<ServerResult searchUser={this.props.serverRsltObj} actions={this.props.actions}/>
 				</div>
 				<div className="col-lg-6">
 					<UserList actions={this.props.actions}  UserList={this.props.userList}/>	

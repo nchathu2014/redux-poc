@@ -1,10 +1,21 @@
 
 let reducer = function(state, action) {
   switch (action.type) {
-    case 'SERVER_CALL':
-      return state;
+    
+  	case 'SEARCH_USER':
+  		return state;
 
-    case 'REMOVE_USER':
+  	case 'ADD_SEARCH_USER':
+  		return Object.assign({},state,{
+    		serverRsltObj:{
+    			id:action.serverRsltObj.id,
+    			userName:action.serverRsltObj.userName,
+    			avatar:action.serverRsltObj.avatar
+    		}
+
+    	},...state.serverRsltObj)
+
+    case 'CLEAR_USER':
       return state;
 
     case 'DELETE_USER':
@@ -14,6 +25,15 @@ let reducer = function(state, action) {
     		})
     	},...state.userList)
     	
+    case 'SAVE_USER':
+    	return Object.assign({}, state, {
+        userList: [{
+          id: action.user.id,
+          userName: action.user.userName,
+          avatar: action.user.avatar,
+          htmlUrl:action.user.htmlUrl
+        }, ...state.userList]
+      });
 
     default: 
       return state;
